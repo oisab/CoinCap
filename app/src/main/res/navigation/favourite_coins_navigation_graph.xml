@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/favourite_coins_navigation_graph"
+    app:startDestination="@id/favouriteCoinsFragment">
+
+    <fragment
+        android:id="@+id/favouriteCoinItemFragment"
+        android:name="com.oisab.coincap.FavouriteCoinItemFragment"
+        android:label="FavouriteCoinItemFragment" />
+    <fragment
+        android:id="@+id/favouriteCoinsFragment"
+        android:name="com.oisab.coincap.FavouriteCoinsFragment"
+        android:label="FavouriteCoinsFragment" >
+        <action
+            android:id="@+id/action_favouriteCoinsFragment_to_favouriteCoinItemFragment"
+            app:destination="@id/favouriteCoinItemFragment" />
+    </fragment>
+</navigation>

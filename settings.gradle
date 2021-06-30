@@ -1,0 +1,2 @@
+rootProject.name = "CoinCap"
+include ':app'

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/menu_navigation_graph"
+    app:startDestination="@id/menuContainerFragment">
+
+    <fragment
+        android:id="@+id/menuContainerFragment"
+        android:name="com.oisab.coincap.MenuContainerFragment"
+        android:label="MenuContainerFragment" >
+        <action
+            android:id="@+id/action_menuContainerFragment_to_user_settings_navigation_graph"
+            app:destination="@id/user_settings_navigation_graph" />
+        <action
+            android:id="@+id/action_menuContainerFragment_to_my_coins_navigation_graph"
+            app:destination="@id/my_coins_navigation_graph" />
+        <action
+            android:id="@+id/action_menuContainerFragment_to_favourite_coins_navigation_graph"
+            app:destination="@id/favourite_coins_navigation_graph" />
+        <action
+            android:id="@+id/action_menuContainerFragment_to_news_navigation_graph"
+            app:destination="@id/news_navigation_graph" />
+    </fragment>
+    <include app:graph="@navigation/news_navigation_graph" />
+    <include app:graph="@navigation/favourite_coins_navigation_graph" />
+    <include app:graph="@navigation/my_coins_navigation_graph" />
+    <include app:graph="@navigation/user_settings_navigation_graph" />
+</navigation>

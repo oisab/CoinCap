@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#282828"
+    android:orientation="vertical">
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/userSurname"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="8dp"
+        android:hint="@string/surname"
+        android:inputType="textPersonName"
+        android:maxLines="1"
+        android:textColor="#00FF00"
+        android:textColorHint="#208040" />
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/userName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginBottom="8dp"
+        android:hint="@string/name"
+        android:inputType="textPersonName"
+        android:maxLines="1"
+        android:textColor="#00FF00"
+        android:textColorHint="#208040" />
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/userPatronymic"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginBottom="8dp"
+        android:hint="@string/patronymic"
+        android:inputType="textPersonName"
+        android:maxLines="1"
+        android:textColor="#00FF00"
+        android:textColorHint="#208040" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        android:text="@string/sex"
+        android:textColor="#00FF00" />
+
+    <RadioGroup
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp">
+
+        <androidx.appcompat.widget.AppCompatRadioButton
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="16dp"
+            android:text="@string/male"
+            android:textColor="#00FF00" />
+
+        <androidx.appcompat.widget.AppCompatRadioButton
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="16dp"
+            android:text="@string/female"
+            android:textColor="#00FF00" />
+
+    </RadioGroup>
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/userBirthdate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginBottom="8dp"
+        android:hint="@string/date_of_birth"
+        android:inputType="date"
+        android:maxLines="1"
+        android:textColor="#00FF00"
+        android:textColorHint="#208040" />
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/userCountry"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginBottom="8dp"
+        android:hint="@string/country"
+        android:inputType="text"
+        android:maxLines="1"
+        android:textColor="#00FF00"
+        android:textColorHint="#208040" />
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/userCity"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginBottom="8dp"
+        android:hint="@string/city"
+        android:inputType="text"
+        android:maxLines="1"
+        android:textColor="#00FF00"
+        android:textColorHint="#208040" />
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/userPhoneNumber"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginBottom="8dp"
+        android:hint="@string/phone_number"
+        android:inputType="phone"
+        android:maxLines="1"
+        android:textColor="#00FF00"
+        android:textColorHint="#208040" />
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/userEmail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginBottom="8dp"
+        android:hint="@string/e_mail"
+        android:inputType="textEmailAddress"
+        android:maxLines="1"
+        android:textColor="#00FF00"
+        android:textColorHint="#208040" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/saveUserDataButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginBottom="8dp"
+        android:background="#00FF00"
+        android:text="@string/save"
+        android:textColor="@color/black" />
+
+    <TextView
+        android:id="@+id/userId"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:textColor="#208040"
+        android:textSize="16sp" />
+
+</androidx.appcompat.widget.LinearLayoutCompat>

@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">CoinCap</string>
+    <string name="surname">Surname</string>
+    <string name="name">Name</string>
+    <string name="patronymic">Patronymic</string>
+    <string name="e_mail">E-mail</string>
+    <string name="sex">Sex</string>
+    <string name="male">Male</string>
+    <string name="female">Female</string>
+    <string name="date_of_birth">Date of birth</string>
+    <string name="country">Country</string>
+    <string name="phone_number">Phone number</string>
+    <string name="city">City</string>
+    <string name="save">Save</string>
+    <string name="login">Login</string>
+    <string name="password">Password</string>
+    <string name="log_in">Log in</string>
+    <string name="forgot_password">Forgot password?</string>
+    <string name="registration">Registration</string>
+</resources>

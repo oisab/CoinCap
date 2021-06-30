@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/fragmentNews"
+        android:icon="@mipmap/ic_launcher"
+        android:title="News" />
+
+    <item
+        android:id="@+id/fragmentFavourites"
+        android:icon="@mipmap/ic_launcher"
+        android:title="Favourites" />
+
+    <item
+        android:id="@+id/fragmentMyCoins"
+        android:icon="@mipmap/ic_launcher"
+        android:title="My Coins" />
+
+    <item
+        android:id="@+id/fragmentUserSettings"
+        android:icon="@mipmap/ic_launcher"
+        android:title="Account" />
+
+</menu>

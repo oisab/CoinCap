@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/my_coins_navigation_graph"
+    app:startDestination="@id/myCoinsFragment">
+
+    <fragment
+        android:id="@+id/myCoinsFragment"
+        android:name="com.oisab.coincap.MyCoinsFragment"
+        android:label="MyCoinsFragment" >
+        <action
+            android:id="@+id/action_myCoinsFragment_to_myCoinItemFragment"
+            app:destination="@id/myCoinItemFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/myCoinItemFragment"
+        android:name="com.oisab.coincap.MyCoinItemFragment"
+        android:label="MyCoinItemFragment" />
+</navigation>
