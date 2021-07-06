@@ -6,7 +6,7 @@
 
     <fragment
         android:id="@+id/newsFragment"
-        android:name="com.oisab.coincap.NewsFragment"
+        android:name="com.oisab.coincap.screens.news.NewsFragment"
         android:label="NewsFragment" >
         <action
             android:id="@+id/action_newsFragment_to_newsItemFragment"
@@ -14,6 +14,6 @@
     </fragment>
     <fragment
         android:id="@+id/newsItemFragment"
-        android:name="com.oisab.coincap.NewsItemFragment"
+        android:name="com.oisab.coincap.screens.news.NewsItemFragment"
         android:label="NewsItemFragment" />
 </navigation>

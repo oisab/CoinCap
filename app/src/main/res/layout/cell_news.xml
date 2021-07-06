@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:orientation="vertical"
     android:background="#282828"
+    android:orientation="vertical"
     android:padding="10dp">
 
     <androidx.appcompat.widget.LinearLayoutCompat
@@ -16,15 +15,14 @@
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/cellNewsImage"
             android:layout_width="80dp"
-            android:layout_height="80dp"/>
+            android:layout_height="80dp" />
 
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/cellNewsText"
-            android:layout_width="0dp"
+            android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:textColor="#00FF00"
-            android:layout_marginHorizontal="12dp"/>
+            android:layout_marginHorizontal="12dp"
+            android:textColor="#00FF00" />
 
     </androidx.appcompat.widget.LinearLayoutCompat>
 

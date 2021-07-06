@@ -22,7 +22,7 @@
         android:layout_marginHorizontal="25dp"
         android:fontFamily="sans-serif-light"
         android:hint="@string/login"
-        android:inputType="textEmailAddress|phone"
+        android:inputType="textEmailAddress"
         android:maxLines="1"
         android:textColor="#00FF00"
         android:textColorHint="#00FF00"

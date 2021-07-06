@@ -6,7 +6,7 @@
 
     <fragment
         android:id="@+id/menuContainerFragment"
-        android:name="com.oisab.coincap.MenuContainerFragment"
+        android:name="com.oisab.coincap.screens.MenuContainerFragment"
         android:label="MenuContainerFragment" >
         <action
             android:id="@+id/action_menuContainerFragment_to_user_settings_navigation_graph"

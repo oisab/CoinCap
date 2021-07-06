@@ -1,0 +1,94 @@
+{
+  "formatVersion": 1,
+  "database": {
+    "version": 1,
+    "identityHash": "66b0cec8ca1024b562b32ecbee5497ee",
+    "entities": [
+      {
+        "tableName": "coin_assets",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` TEXT NOT NULL, `rank` TEXT, `name` TEXT, `symbol` TEXT, `supply` TEXT, `maxSupply` TEXT, `marketCapUsd` TEXT, `volumeUsd24Hr` TEXT, `priceUsd` TEXT, `changePercent24Hr` TEXT, `vwap24Hr` TEXT, PRIMARY KEY(`id`))",
+        "fields": [
+          {
+            "fieldPath": "coinId",
+            "columnName": "id",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "coinRank",
+            "columnName": "rank",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "coinName",
+            "columnName": "name",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "coinSymbol",
+            "columnName": "symbol",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "coinSupply",
+            "columnName": "supply",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "coinMaxSupply",
+            "columnName": "maxSupply",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "coinMarketCapUsd",
+            "columnName": "marketCapUsd",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "coinVolume",
+            "columnName": "volumeUsd24Hr",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "coinPriceUsd",
+            "columnName": "priceUsd",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "coinChangePercent",
+            "columnName": "changePercent24Hr",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "coinWap",
+            "columnName": "vwap24Hr",
+            "affinity": "TEXT",
+            "notNull": false
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "id"
+          ],
+          "autoGenerate": false
+        },
+        "indices": [],
+        "foreignKeys": []
+      }
+    ],
+    "views": [],
+    "setupQueries": [
+      "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '66b0cec8ca1024b562b32ecbee5497ee')"
+    ]
+  }
+}

@@ -6,11 +6,11 @@
 
     <fragment
         android:id="@+id/favouriteCoinItemFragment"
-        android:name="com.oisab.coincap.FavouriteCoinItemFragment"
+        android:name="com.oisab.coincap.screens.favourite.FavouriteCoinItemFragment"
         android:label="FavouriteCoinItemFragment" />
     <fragment
         android:id="@+id/favouriteCoinsFragment"
-        android:name="com.oisab.coincap.FavouriteCoinsFragment"
+        android:name="com.oisab.coincap.screens.favourite.FavouriteCoinsFragment"
         android:label="FavouriteCoinsFragment" >
         <action
             android:id="@+id/action_favouriteCoinsFragment_to_favouriteCoinItemFragment"

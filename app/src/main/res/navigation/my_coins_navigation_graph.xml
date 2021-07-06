@@ -6,7 +6,7 @@
 
     <fragment
         android:id="@+id/myCoinsFragment"
-        android:name="com.oisab.coincap.MyCoinsFragment"
+        android:name="com.oisab.coincap.screens.mycoins.MyCoinsFragment"
         android:label="MyCoinsFragment" >
         <action
             android:id="@+id/action_myCoinsFragment_to_myCoinItemFragment"
@@ -14,6 +14,6 @@
     </fragment>
     <fragment
         android:id="@+id/myCoinItemFragment"
-        android:name="com.oisab.coincap.MyCoinItemFragment"
+        android:name="com.oisab.coincap.screens.mycoins.MyCoinItemFragment"
         android:label="MyCoinItemFragment" />
 </navigation>

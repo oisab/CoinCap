@@ -6,7 +6,7 @@
 
     <fragment
         android:id="@+id/loginFragment"
-        android:name="com.oisab.coincap.LoginFragment"
+        android:name="com.oisab.coincap.screens.start.LoginFragment"
         android:label="LoginFragment" >
         <action
             android:id="@+id/action_loginFragment_to_forgotPasswordFragment"
@@ -20,11 +20,11 @@
     </fragment>
     <fragment
         android:id="@+id/forgotPasswordFragment"
-        android:name="com.oisab.coincap.ForgotPasswordFragment"
+        android:name="com.oisab.coincap.screens.start.ForgotPasswordFragment"
         android:label="ForgotPasswordFragment" />
     <fragment
         android:id="@+id/registrationFragment"
-        android:name="com.oisab.coincap.RegistrationFragment"
+        android:name="com.oisab.coincap.screens.start.RegistrationFragment"
         android:label="RegistrationFragment" />
     <include app:graph="@navigation/menu_navigation_graph" />
 </navigation>

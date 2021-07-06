@@ -6,6 +6,6 @@
 
     <fragment
         android:id="@+id/userSettingsFragment"
-        android:name="com.oisab.coincap.UserSettingsFragment"
+        android:name="com.oisab.coincap.screens.usersettings.UserSettingsFragment"
         android:label="UserSettingsFragment" />
 </navigation>
