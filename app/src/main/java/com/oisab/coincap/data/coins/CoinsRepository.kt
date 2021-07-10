@@ -8,18 +8,13 @@ import kotlinx.coroutines.coroutineScope
 
 class CoinsRepository(val local: CoinsLocalDataSource, val remote: CoinsRemoteDataSource) {
 
-    suspend fun fetchLocalCoinAssetsAsync(): Deferred<CoinAssetsResponse> {
+    suspend fun fetchLocalCoinAssetsAsync(): CoinAssetsResponse =
+        CoinAssetsResponse(local.loadAllCoinsAsync().mapToRemote(), 0)
 
-        return coroutineScope {
-            async {
-                CoinAssetsResponse(local.loadAllCoinsAsync().mapToRemote(), 0)
-            }
-        }
-    }
 
-    suspend fun fetchRemoteCoinAssetsAsync(): Deferred<CoinAssetsResponse> {
-        val remoteRequest = remote.getCoinAssetsAsync()
-        local.saveRemoteResponse(remoteRequest.await())
+    suspend fun fetchRemoteCoinAssetsAsync(): CoinAssetsResponse {
+        val remoteRequest = remote.getCoinAssetsAsync().await()
+        local.saveRemoteResponse(remoteRequest)
         return remoteRequest
     }
 }

@@ -4,7 +4,7 @@ import android.app.Application
 import com.oisab.coincap.CoinApp
 import com.oisab.coincap.data.coins.local.RoomModule
 import com.oisab.coincap.data.coins.room.CoinsDataModule
-import com.oisab.coincap.di.modules.ActivityBindingModule
+import com.oisab.coincap.di.modules.ScreenBindingModule
 import com.oisab.coincap.screens.favourite.FavouriteCoinsModule
 import com.oisab.coincap.di.modules.RemoteModule
 import com.oisab.coincap.di.modules.ViewModelModule
@@ -16,7 +16,7 @@ import javax.inject.Singleton
 
 @Component(
     modules = [AndroidInjectionModule::class,
-        ActivityBindingModule::class,
+        ScreenBindingModule::class,
         FavouriteCoinsModule::class,
         ViewModelModule::class,
         CoinsDataModule::class,

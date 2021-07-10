@@ -4,21 +4,21 @@
     <item
         android:id="@+id/fragmentNews"
         android:icon="@mipmap/ic_launcher"
-        android:title="News" />
+        android:title="@string/news" />
 
     <item
         android:id="@+id/fragmentFavourites"
         android:icon="@mipmap/ic_launcher"
-        android:title="Favourites" />
+        android:title="@string/favourites" />
 
     <item
         android:id="@+id/fragmentMyCoins"
         android:icon="@mipmap/ic_launcher"
-        android:title="My Coins" />
+        android:title="@string/my_coins" />
 
     <item
         android:id="@+id/fragmentUserSettings"
         android:icon="@mipmap/ic_launcher"
-        android:title="Account" />
+        android:title="@string/account" />
 
 </menu>

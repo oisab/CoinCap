@@ -35,11 +35,6 @@ class FavouriteCoinsFragment : Fragment(R.layout.fragment_favourite_coins) {
         val favouriteCoinsRecyclerView: RecyclerView = view.findViewById(R.id.favouriteCoinsRecyclerView)
         favouriteCoinsRecyclerView.adapter = favouriteCoinsAdapter
         favouriteCoinsRecyclerView.layoutManager = LinearLayoutManager(requireContext(), RecyclerView.VERTICAL, false)
-//
-//        val favouriteCoinSymbol: AppCompatTextView = view.findViewById(R.id.favouriteCoinSymbol)
-//        val favouriteCoinName: AppCompatTextView = view.findViewById(R.id.favouriteCoinName)
-//        val favouriteCoinPrice: AppCompatTextView = view.findViewById(R.id.favouriteCoinPrice)
-//        val favouriteCoinChangePercent: AppCompatTextView = view.findViewById(R.id.favouriteCoinChangePercent)
 
         favouriteCoinsViewModel.getCoins()
         favouriteCoinsViewModel.favouriteCoins.observe(viewLifecycleOwner, {

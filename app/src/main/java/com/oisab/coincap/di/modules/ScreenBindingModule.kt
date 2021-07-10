@@ -5,7 +5,7 @@ import dagger.Module
 import dagger.android.ContributesAndroidInjector
 
 @Module
-abstract class ActivityBindingModule {
+abstract class ScreenBindingModule {
 
     @ContributesAndroidInjector
     abstract fun favouriteCoinsFragment(): FavouriteCoinsFragment

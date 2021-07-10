@@ -18,7 +18,7 @@ class MenuContainerFragment : Fragment(R.layout.fragment_menu_container) {
 
     private fun initBottomNavigation() {
         bottomNavigationView = requireView().findViewById(R.id.navigationMenu)
-        bottomNavigationView.setOnNavigationItemSelectedListener { item ->
+        bottomNavigationView.setOnItemSelectedListener { item ->
             val res = when (item.itemId) {
                 R.id.fragmentNews -> {
                     R.navigation.news_navigation_graph

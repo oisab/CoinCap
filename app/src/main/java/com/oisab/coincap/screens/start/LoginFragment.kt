@@ -26,8 +26,8 @@ class LoginFragment : Fragment(R.layout.fragment_login) {
         val forgotPasswordTextView: AppCompatTextView =
             view.findViewById(R.id.forgotPasswordTextField)
         val registrationTextView: AppCompatTextView = view.findViewById(R.id.registrationTextField)
-//        val loginEditText: AppCompatEditText = view.findViewById(R.id.loginTextField)
-//        val passwordEditText: AppCompatEditText = view.findViewById(R.id.passwordTextField)
+        val loginEditText: AppCompatEditText = view.findViewById(R.id.loginTextField)
+        val passwordEditText: AppCompatEditText = view.findViewById(R.id.passwordTextField)
 
         forgotPasswordTextView.setOnClickListener {
             findNavController().navigate(R.id.action_loginFragment_to_forgotPasswordFragment)
@@ -38,12 +38,11 @@ class LoginFragment : Fragment(R.layout.fragment_login) {
         }
 
         loginButton.setOnClickListener {
-//            if(loginViewModel.validateLogin(loginEditText.text.toString()) && loginViewModel.validatePassword(passwordEditText.text.toString())) {
-//                findNavController().navigate(R.id.action_loginFragment_to_menu_navigation_graph)
-//            }
-//            else
-//            Toast.makeText(requireContext(), "Invalid login or password", Toast.LENGTH_SHORT).show()
-            findNavController().navigate(R.id.action_loginFragment_to_menu_navigation_graph)
+            if(loginViewModel.validateLogin(loginEditText.text.toString()) && loginViewModel.validatePassword(passwordEditText.text.toString())) {
+                findNavController().navigate(R.id.action_loginFragment_to_menu_navigation_graph)
+            }
+            else
+            Toast.makeText(requireContext(), "Invalid login or password", Toast.LENGTH_SHORT).show()
         }
     }
 }

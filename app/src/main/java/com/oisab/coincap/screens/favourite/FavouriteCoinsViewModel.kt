@@ -26,10 +26,10 @@ class FavouriteCoinsViewModel @Inject constructor(private val coinsRepository: C
     }
 
     private suspend fun getLocalCoinAssetsAsync(): CoinAssetsResponse {
-        return coinsRepository.fetchLocalCoinAssetsAsync().await()
+        return coinsRepository.fetchLocalCoinAssetsAsync()
     }
 
     private suspend fun getRemoteCoinAssetsAsync(): CoinAssetsResponse {
-        return coinsRepository.fetchRemoteCoinAssetsAsync().await()
+        return coinsRepository.fetchRemoteCoinAssetsAsync()
     }
 }
