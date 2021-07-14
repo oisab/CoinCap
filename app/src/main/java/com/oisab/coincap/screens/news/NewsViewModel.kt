@@ -34,7 +34,4 @@ class NewsViewModel: ViewModel() {
             add(CellNews(R.drawable.ic_launcher_foreground, "Биткоин вырос"))
         })
     }
-
-
-
 }

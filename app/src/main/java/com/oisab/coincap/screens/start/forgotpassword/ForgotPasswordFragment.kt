@@ -1,4 +1,4 @@
-package com.oisab.coincap.screens.start
+package com.oisab.coincap.screens.start.forgotpassword
 
 import androidx.fragment.app.Fragment
 import com.oisab.coincap.R
