@@ -29,16 +29,14 @@ class LoginFragment : Fragment(R.layout.fragment_login) {
         val passwordEditText: AppCompatEditText = view.findViewById(R.id.passwordTextField)
 
         loginViewModel.viewStates().observe(viewLifecycleOwner, { bindViewState(it) })
-//        loginViewModel.viewActions().observe(viewLifecycleOwner, { bindViewAction(it) })
+        loginViewModel.viewActions().observe(viewLifecycleOwner, { bindViewAction(it) })
 
         forgotPasswordTextView.setOnClickListener {
-            findNavController().navigate(R.id.action_loginFragment_to_forgotPasswordFragment)
+            loginViewModel.obtainEvent(LoginEvent.ForgotPasswordClick)
         }
-
         registrationTextView.setOnClickListener {
-            findNavController().navigate(R.id.action_loginFragment_to_registrationFragment)
+            loginViewModel.obtainEvent(LoginEvent.RegistrationClick)
         }
-
         loginButton.setOnClickListener {
             loginViewModel.authData = AuthData(loginEditText.text.toString(), passwordEditText.text.toString())
             loginViewModel.obtainEvent(LoginEvent.LogInClick)
@@ -46,18 +44,17 @@ class LoginFragment : Fragment(R.layout.fragment_login) {
     }
 
     private fun bindViewState(viewState: LoginViewState) {
-        when (viewState.fetchStatus) {
-            FetchStatus.Success -> findNavController().navigate(R.id.action_loginFragment_to_menu_navigation_graph)
-            FetchStatus.Error -> bindViewAction(LoginAction(LoginEffects.ShowMessage, viewState.errorMessage))
-            else -> {
-                FetchStatus.Empty
-            }
+        when(viewState) {
+            LoginViewState.NavigateToMenu -> findNavController().navigate(R.id.action_loginFragment_to_menu_navigation_graph)
+            LoginViewState.NavigateToForgotPassword -> findNavController().navigate(R.id.action_loginFragment_to_forgotPasswordFragment)
+            LoginViewState.NavigateToRegistration -> findNavController().navigate(R.id.action_loginFragment_to_registrationFragment)
+            else -> LoginViewState.Error
         }
     }
 
-    private fun bindViewAction(viewAction: LoginAction) {
-        when(viewAction.loginEffects) {
-            LoginEffects.ShowMessage -> Toast.makeText(requireContext(), viewAction.message, Toast.LENGTH_SHORT).show()
+    private fun bindViewAction(loginAction: LoginAction) {
+        when(loginAction) {
+            is LoginAction.ShowMessage -> Toast.makeText(requireContext(), loginAction.message, Toast.LENGTH_SHORT).show()
         }
     }
 }

@@ -5,29 +5,29 @@ import com.oisab.coincap.screens.BaseViewModel
 class LoginViewModel : BaseViewModel<LoginViewState, LoginAction, LoginEvent>() {
     lateinit var authData: AuthData
 
-    init {
-        viewState = LoginViewState(FetchStatus.Empty, null)
-        viewAction = LoginAction(LoginEffects.ShowMessage, null)
-    }
-
     override fun obtainEvent(viewEvent: LoginEvent) {
         when (viewEvent) {
+            LoginEvent.RegistrationClick -> viewState = LoginViewState.NavigateToRegistration
+            LoginEvent.ForgotPasswordClick -> viewState = LoginViewState.NavigateToForgotPassword
             LoginEvent.LogInClick -> performLogin(authData)
-            else -> viewState = LoginViewState(FetchStatus.Error, "Authorization error")
+            else -> { viewState = LoginViewState.Error
+                viewAction = LoginAction.ShowMessage("Authorization error")
+            }
         }
     }
 
     private fun performLogin(authData: AuthData) {
         if (validateLogin(authData.login) && validatePassword(authData.password)) {
-            viewState = LoginViewState(FetchStatus.Success, null)
+            viewState = LoginViewState.NavigateToMenu
         } else {
-            viewState = LoginViewState(FetchStatus.Error, "Invalid login or password")
-            viewAction = LoginAction(LoginEffects.ShowMessage, viewState.errorMessage)
+            viewState = LoginViewState.Error
+            viewAction = LoginAction.ShowMessage("Invalid login or password")
         }
     }
 
     private fun validateLogin(login: String): Boolean = login.matches(
         Regex(
+
             "^[\\w! #\$%&‘*+-/=?^`~.]{1,64}@[\\w! #\$%&‘*+-/=?^`~.]" +
                     "{1,253}\\.[a-z]{2,6}$"
         )
