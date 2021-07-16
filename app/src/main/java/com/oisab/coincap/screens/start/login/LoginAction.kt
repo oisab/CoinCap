@@ -1,5 +1,10 @@
 package com.oisab.coincap.screens.start.login
 
-sealed class LoginAction {
-    class ShowMessage(val message: String): LoginAction()
+data class LoginAction(
+    val loginEffects: LoginEffects,
+    val message: String?
+)
+
+sealed class LoginEffects {
+    object ShowMessage: LoginEffects()
 }

@@ -22,7 +22,7 @@ abstract class BaseViewModel<S, A, E>: ViewModel() {
     fun viewActions(): SingleLiveAction<A> = _viewActions
 
     private var _viewAction: A? = null
-    private var viewAction: A
+    protected var viewAction: A
         get() = _viewAction
             ?: throw UninitializedPropertyAccessException("viewAction was required before being initialized")
         set(value: A) {

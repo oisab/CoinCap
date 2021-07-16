@@ -10,8 +10,6 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import com.oisab.coincap.R
-import com.oisab.coincap.screens.start.AuthData
-import com.oisab.coincap.screens.start.LoginEvent
 
 class LoginFragment : Fragment(R.layout.fragment_login) {
     private lateinit var loginViewModel: LoginViewModel
@@ -30,6 +28,9 @@ class LoginFragment : Fragment(R.layout.fragment_login) {
         val loginEditText: AppCompatEditText = view.findViewById(R.id.loginTextField)
         val passwordEditText: AppCompatEditText = view.findViewById(R.id.passwordTextField)
 
+        loginViewModel.viewStates().observe(viewLifecycleOwner, { bindViewState(it) })
+//        loginViewModel.viewActions().observe(viewLifecycleOwner, { bindViewAction(it) })
+
         forgotPasswordTextView.setOnClickListener {
             findNavController().navigate(R.id.action_loginFragment_to_forgotPasswordFragment)
         }
@@ -42,16 +43,21 @@ class LoginFragment : Fragment(R.layout.fragment_login) {
             loginViewModel.authData = AuthData(loginEditText.text.toString(), passwordEditText.text.toString())
             loginViewModel.obtainEvent(LoginEvent.LogInClick)
         }
-
-        loginViewModel.viewStates().observe(viewLifecycleOwner, { bindViewState(it) })
     }
 
     private fun bindViewState(viewState: LoginViewState) {
-        when (viewState) {
-            LoginViewState.Success -> findNavController().navigate(R.id.action_loginFragment_to_menu_navigation_graph)
-            LoginViewState.Error("Invalid login or password") -> Toast.makeText(requireContext(),"Invalid login or password", Toast.LENGTH_SHORT).show()
-            LoginViewState.Error("Authorization error") -> Toast.makeText(requireContext(),"Authorization error", Toast.LENGTH_SHORT).show()
-            else -> LoginViewState.Error("Error")
+        when (viewState.fetchStatus) {
+            FetchStatus.Success -> findNavController().navigate(R.id.action_loginFragment_to_menu_navigation_graph)
+            FetchStatus.Error -> bindViewAction(LoginAction(LoginEffects.ShowMessage, viewState.errorMessage))
+            else -> {
+                FetchStatus.Empty
+            }
+        }
+    }
+
+    private fun bindViewAction(viewAction: LoginAction) {
+        when(viewAction.loginEffects) {
+            LoginEffects.ShowMessage -> Toast.makeText(requireContext(), viewAction.message, Toast.LENGTH_SHORT).show()
         }
     }
 }

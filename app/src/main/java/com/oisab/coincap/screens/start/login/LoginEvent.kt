@@ -1,4 +1,4 @@
-package com.oisab.coincap.screens.start
+package com.oisab.coincap.screens.start.login
 
 sealed class LoginEvent {
 //    object ScreenShown: LoginEvent()

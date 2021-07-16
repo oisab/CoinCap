@@ -1,30 +1,30 @@
 package com.oisab.coincap.screens.start.login
 
 import com.oisab.coincap.screens.BaseViewModel
-import com.oisab.coincap.screens.start.AuthData
-import com.oisab.coincap.screens.start.LoginEvent
-import com.oisab.coincap.screens.start.login.LoginViewState
 
 class LoginViewModel : BaseViewModel<LoginViewState, LoginAction, LoginEvent>() {
     lateinit var authData: AuthData
 
     init {
-        viewState = LoginViewState.Empty
+        viewState = LoginViewState(FetchStatus.Empty, null)
+        viewAction = LoginAction(LoginEffects.ShowMessage, null)
     }
 
     override fun obtainEvent(viewEvent: LoginEvent) {
-        viewState = when (viewEvent) {
-            LoginEvent.LogInClick -> if (performLogin(authData)) {
-                LoginViewState.Success
-            } else {
-                LoginViewState.Error("Invalid login or password")
-            }
-            else -> LoginViewState.Error("Authorization error")
+        when (viewEvent) {
+            LoginEvent.LogInClick -> performLogin(authData)
+            else -> viewState = LoginViewState(FetchStatus.Error, "Authorization error")
         }
     }
 
-    private fun performLogin(authData: AuthData): Boolean =
-        validateLogin(authData.login) && validatePassword(authData.password)
+    private fun performLogin(authData: AuthData) {
+        if (validateLogin(authData.login) && validatePassword(authData.password)) {
+            viewState = LoginViewState(FetchStatus.Success, null)
+        } else {
+            viewState = LoginViewState(FetchStatus.Error, "Invalid login or password")
+            viewAction = LoginAction(LoginEffects.ShowMessage, viewState.errorMessage)
+        }
+    }
 
     private fun validateLogin(login: String): Boolean = login.matches(
         Regex(
